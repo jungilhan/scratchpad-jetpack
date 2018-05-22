@@ -14,5 +14,8 @@ class MainActivity : AppCompatActivity() {
         listAdapterButton.setOnClickListener { _ ->
             startActivity(Intent(MainActivity@this, ListAdapterActivity::class.java))
         }
+        recyclerViewSelectionButton.setOnClickListener { _ ->
+            startActivity(Intent(MainActivity@this, RecyclerViewSelectionActivity::class.java))
+        }
     }
 }
