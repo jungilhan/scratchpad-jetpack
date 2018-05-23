@@ -62,7 +62,7 @@ class RecyclerViewSelectionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler_view_selection)
-        title = RecyclerViewSelectionActivity::class.java.simpleName
+        title = "recyclerview-selection"
 
         SelectableAdapter(listOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)).apply {
             selectionFun = Function {
@@ -83,9 +83,9 @@ class RecyclerViewSelectionActivity : AppCompatActivity() {
         selectionTracker.addObserver(object : SelectionTracker.SelectionObserver<Long>() {
             override fun onSelectionChanged() {
                 title = if (selectionTracker.hasSelection()) {
-                    "Selection ${selectionTracker.selection.size()} / $MAXIMUM_SELECTION"
+                    "${selectionTracker.selection.size()} / $MAXIMUM_SELECTION selected"
                 } else {
-                    RecyclerViewSelectionActivity::class.java.simpleName
+                    "recyclerview-selection"
                 }
             }
         })
